@@ -31,8 +31,8 @@ Your users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub]()
-- Live Site URL: [Netlify]()
+- Solution URL: [GitHub](https://github.com/ThiCode126/advice-generator-app)
+- Live Site URL: [Netlify](https://advice-generator-app-thicode.netlify.app/)
 
 ## My process
 
