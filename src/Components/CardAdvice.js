@@ -54,6 +54,7 @@ const CardAdvice = () => {
         <div className="separator"></div>
         <button
           className='dice'
+          aria-label='dice'
           onClick={() => fetchDataAdvice(Math.floor(Math.random() * 200))}
         >
           <DiceLogo />
