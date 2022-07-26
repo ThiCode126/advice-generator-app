@@ -15,7 +15,7 @@ const CardAdvice = () => {
     axios.get(`https://api.adviceslip.com/advice/${id}`)
       .then(res => {
 
-        animation();
+        setStartAnimation(true);
 
         const data = res.data;
         if (data.message) {
@@ -25,8 +25,11 @@ const CardAdvice = () => {
           });
         } else {
           setDataAdvice(data.slip);
-
         }
+
+        setTimeout(() => {
+          setStartAnimation(false);
+        }, 2000)
 
       })
       .catch(error => {
@@ -34,13 +37,6 @@ const CardAdvice = () => {
       })
   }
 
-  const animation = () => {
-    setStartAnimation(true);
-
-    setTimeout(() => {
-      setStartAnimation(false);
-    }, 2000)
-  }
 
   useEffect(() => {
     fetchDataAdvice(117);
