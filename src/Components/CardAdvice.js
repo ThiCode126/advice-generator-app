@@ -12,11 +12,12 @@ const CardAdvice = () => {
   const [startAnimation, setStartAnimation] = useState(false);
 
   const fetchDataAdvice = (id) => {
-
     axios.get(`https://api.adviceslip.com/advice/${id}`)
       .then(res => {
+
+        animation();
+
         const data = res.data;
-        setStartAnimation(true);
         if (data.message) {
           setDataAdvice({
             id: id,
@@ -27,15 +28,18 @@ const CardAdvice = () => {
 
         }
 
-        setTimeout(() => {
-          setStartAnimation(false);
-        }, 2000)
-
       })
       .catch(error => {
         console.log(error);
       })
+  }
 
+  const animation = () => {
+    setStartAnimation(true);
+
+    setTimeout(() => {
+      setStartAnimation(false);
+    }, 2000)
   }
 
   useEffect(() => {
